@@ -4,9 +4,8 @@ A visual editor for designing Directed Acyclic Graphs (DAGs), built using React 
 
 ## 🌐 Live Demo
 
-🔗 [Deployed on Vercel](https://your-vercel-link.vercel.app)  
-*(Replace this with your actual Vercel deployment URL)*
-
+🔗 [Deployed on Vercel]
+https://nexstem-pipeline-dxe76y8gz-vaishnavis-projects-7485a9d2.vercel.app
 ---
 
 ## 📦 Features
