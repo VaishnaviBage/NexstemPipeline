@@ -1,12 +1,86 @@
-# React + Vite
+# 🚀 React DAG Pipeline Editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A visual editor for designing Directed Acyclic Graphs (DAGs), built using React and React Flow. This tool simulates data pipelines and processing workflows using draggable and connectable nodes.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 [Deployed on Vercel](https://your-vercel-link.vercel.app)  
+*(Replace this with your actual Vercel deployment URL)*
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Features
+
+- ➕ Add custom-named nodes
+- 🔗 Draw directional edges between nodes
+- ❌ Prevent invalid edges (e.g., self-loops, source→source)
+- ✅ Real-time DAG validation (no cycles, no unconnected nodes)
+- 🧭 Auto-layout via Dagre.js
+- ⌨️ Delete selected nodes/edges using Delete or Backspace
+- 🔍 Zoom & pan with built-in React Flow controls
+
+---
+
+## 🛠️ Setup Instructions
+
+### Prerequisites
+- Node.js (v16+)
+- npm (v8+)
+
+### Installation & Run Locally
+
+```bash
+git clone https://github.com/vaishnavibage/pipeline-editor.git
+cd pipeline-editor
+npm install
+npm run dev
+
+**🧰 Libraries Used**
+| Library        | Purpose                          |
+| -------------- | -------------------------------- |
+| **React**      | UI framework                     |
+| **React Flow** | Visual graph and edge management |
+| **Dagre**      | Auto-layout for nodes            |
+| **Vite**       | Build and dev server             |
+
+**📸 Screenshots**
+
+![image](https://github.com/user-attachments/assets/017731e8-765b-43b1-9128-306e04b0bb66)
+
+
+**🧠 Key Decisions & Challenges**
+Used reactflow to simplify visual graph construction and event handling
+
+Implemented cycle detection using Depth-First Search in Validator.js
+
+Created auto-layout functionality using Dagre, integrated with fitView() to zoom/center after layout
+
+Enabled delete by tracking selected elements using onSelectionChange
+
+Handled real-time validation with useEffect watching nodes/edges state
+
+**✅ Validation Rules**
+At least 2 nodes
+
+No cycles
+
+All nodes must be connected to at least one edge
+
+Only valid source → target connections (no source→source or target→target)
+
+No self-loops
+
+**📌 Possible Improvements**
+Context menu (right-click delete/edit)
+
+Node type icons (e.g., input/output/transform)
+
+Save/load pipeline from localStorage
+
+Export pipeline as JSON or PNG
+
+**👩‍💻 Developed By**
+Vaishnavi Bage
+🔗https://github.com/VaishnaviBage/NexstemPipeline 
+
+
